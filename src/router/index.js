@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const HomePage = () => import(/* webpackChunkName: "home" */ '../views/HomePage.vue')
-const TaskList = () => import(/* webpackChunkName: "task-list" */ '../views/TaskList.vue')
-const NotFound = () => import(/* webpackChunkName: "not-found" */ '../views/NotFound.vue')
+const HomePage = () => import(/* webpackChunkName: "home" */ '../views/HomePage.vue')  // 11
+const TaskList = () => import(/* webpackChunkName: "task-list" */ '../views/TaskList.vue')  // 11
+const NotFound = () => import(/* webpackChunkName: "not-found" */ '../views/NotFound.vue') // 11
 
 
 const routes = [

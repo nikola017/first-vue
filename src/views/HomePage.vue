@@ -11,6 +11,7 @@
   }
   </script>
   
+  <!-- 5 -->
   <style scoped>
   .home {
     text-align: center;

@@ -14,8 +14,8 @@
     <ul>
       <li v-for="task in taskStore.filteredTasks" :key="task.id">
         <label>
-          <input type="checkbox" v-model="task.done">
-          <span :class="{ done: task.done }">{{ task.text }}</span>
+          <input type="checkbox" v-model="task.done">  <!-- 2 -->
+          <span :class="{ done: task.done }">{{ task.text }}</span>  <!-- 1 -->
         </label>
         <button @click="taskStore.removeTask(task.id)">Obriši</button>
       </li>
@@ -32,10 +32,9 @@ export default {
   setup() {
     const taskStore = useTaskStore();
 
-    // Učitaj zadatke kada se komponenta montira
     taskStore.loadTasks();
 
-    watch(() => taskStore.tasks, () => {
+    watch(() => taskStore.tasks, () => { // 6
       taskStore.saveTasks();
     }, { deep: true });
 
@@ -45,7 +44,7 @@ export default {
 </script>
 
 
-  
+<!-- 5 -->
 <style scoped>
 .task-list {
   padding: 20px;

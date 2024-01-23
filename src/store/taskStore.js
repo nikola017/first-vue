@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia';
 
-export const useTaskStore = defineStore('taskStore', {
+export const useTaskStore = defineStore('taskStore', {  // 10
   state: () => ({
     tasks: [],
     nextTaskId: 1,
     filter: 'all'
   }),
   getters: {
-    filteredTasks: (state) => {
+    filteredTasks: (state) => { // 4
       switch (state.filter) {
         case 'active':
           return state.tasks.filter(task => !task.done);
@@ -37,10 +37,10 @@ export const useTaskStore = defineStore('taskStore', {
     setFilter(filter) {
       this.filter = filter;
     },
-    saveTasks() {
+    saveTasks() {  // 11
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
     },
-    loadTasks() {
+    loadTasks() {  // 11
       const storedTasks = localStorage.getItem('tasks');
       if (storedTasks) {
         this.tasks = JSON.parse(storedTasks);

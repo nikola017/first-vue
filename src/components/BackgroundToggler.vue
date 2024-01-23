@@ -7,12 +7,13 @@
     name: 'BackgroundToggler',
     methods: {
       toggleBackground() {
-        this.$emit('backgroundToggled');
+        this.$emit('backgroundToggled'); // 9
       }
     }
   }
 </script>
-  
+
+<!-- 5 -->
 <style scoped>
   button {
     margin: 10px;
